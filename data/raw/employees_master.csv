@@ -1,0 +1,41 @@
+employee_id,employee_name,store_id,role,role_category,joining_date,experience_months,phone,status
+EMP0001,Pooja Gupta,S002,Assistant Manager,Supervisory,2026-06-03,1,9356135680,Active
+EMP0002,Pooja Singh,S004,Quality Checker,Quality,2026-02-26,4,9599326438,Active
+EMP0003,Pooja Reddy,S003,Team Lead - Putaway,Operational,2026-01-03,6,9903079055,Active
+EMP0004,Priya Reddy,S001,Assistant Manager,Supervisory,2025-08-09,11,9127571992,Active
+EMP0005,Rohan Singh,S005,Quality Checker,Quality,2025-06-04,13,9181600593,Active
+EMP0006,Kunal Reddy,S002,Store Manager,Supervisory,2025-08-19,11,9964929067,Active
+EMP0007,Vikram Kulkarni,S005,Store Manager,Supervisory,2025-07-03,12,9810303128,Active
+EMP0008,Anjali Sharma,S001,Warehouse Associate,Operational,2024-08-29,23,9551034639,Active
+EMP0009,Kunal Mehta,S001,Team Lead - Inventory,Operational,2025-06-18,13,9859466878,Active
+EMP0010,Kunal Verma,S004,Assistant Manager,Supervisory,2025-01-05,18,9761330848,Active
+EMP0011,Disha Reddy,S004,Team Lead - Inventory,Operational,2025-04-03,15,9388187517,Active
+EMP0012,Neha Singh,S002,Store Manager,Supervisory,2025-09-11,10,9905817775,Active
+EMP0013,Rohan Joshi,S005,Warehouse Associate,Operational,2024-08-08,23,9130816384,Active
+EMP0014,Sneha Joshi,S003,Assistant Manager,Supervisory,2025-02-09,17,9956665975,Active
+EMP0015,Disha Verma,S003,Team Lead - Putaway,Operational,2024-10-21,21,9696776072,Active
+EMP0016,Sneha Kulkarni,S005,Assistant Manager,Supervisory,2026-03-28,3,9624606470,Active
+EMP0017,Kunal Mehta,S002,Quality Checker,Quality,2025-02-21,17,9581223755,Active
+EMP0018,Rohan Singh,S001,Team Lead - Putaway,Operational,2025-11-09,8,9428786222,Active
+EMP0019,Vikram Yadav,S005,Team Lead - Putaway,Operational,2025-02-24,17,9469106688,Active
+EMP0020,Disha Mehta,S005,Team Lead - Putaway,Operational,2025-06-28,13,9390894296,Active
+EMP0021,Disha Singh,S003,Assistant Manager,Supervisory,2026-02-20,5,9438817025,Active
+EMP0022,Sneha Singh,S005,Quality Checker,Quality,2025-12-16,7,9893070706,Active
+EMP0023,Vikram Reddy,S003,Quality Checker,Quality,2024-10-28,21,9403867539,Active
+EMP0024,Anjali Gupta,S002,Team Lead - Putaway,Operational,2025-11-03,8,9424557359,Active
+EMP0025,Rajesh Sharma,S005,Assistant Manager,Supervisory,2025-09-16,10,9694164665,Active
+EMP0026,Priya Sharma,S002,Quality Checker,Quality,2025-02-06,17,9716396766,Active
+EMP0027,Anjali Gupta,S004,Team Lead - Inventory,Operational,2025-03-29,16,9155165334,Active
+EMP0028,Rohan Mehta,S004,Store Manager,Supervisory,2026-04-18,3,9179545125,Active
+EMP0029,Pooja Verma,S001,Assistant Manager,Supervisory,2026-01-22,6,9191462297,Active
+EMP0030,Pooja Reddy,S001,Warehouse Associate,Operational,2025-04-23,15,9949051496,Active
+EMP0031,Neha Mehta,S002,Warehouse Associate,Operational,2025-05-30,13,9419280490,Active
+EMP0032,Pooja Sharma,S004,Team Lead - Putaway,Operational,2024-11-18,20,9754586204,Active
+EMP0033,Sneha Verma,S001,Assistant Manager,Supervisory,2024-09-21,22,9809129316,Active
+EMP0034,Vikram Patel,S002,Assistant Manager,Supervisory,2025-12-28,6,9268075622,Active
+EMP0035,Neha Verma,S004,Team Lead - Inventory,Operational,2024-10-23,21,9135046782,Active
+EMP0036,Disha Mehta,S003,Quality Checker,Quality,2025-09-07,10,9176428684,Active
+EMP0037,Pooja Singh,S002,Team Lead - Putaway,Operational,2024-09-21,22,9556489494,Active
+EMP0038,Amit Verma,S005,Assistant Manager,Supervisory,2024-08-29,23,9987588450,Active
+EMP0039,Suresh Reddy,S001,Store Manager,Supervisory,2026-01-05,6,9904187231,Active
+EMP0040,Neha Verma,S003,Team Lead - Inventory,Operational,2026-02-16,5,9851333320,Active

@@ -1,0 +1,151 @@
+product_id,product_name,category,sku,unit_price,shelf_life_days,reorder_level,max_stock
+PROD00001,Snacks & Chips - Product 1,Snacks & Chips,SKU000001,326.92,19,27,112
+PROD00002,Snacks & Chips - Product 2,Snacks & Chips,SKU000002,127.14,59,44,72
+PROD00003,Snacks & Chips - Product 3,Snacks & Chips,SKU000003,303.44,23,11,73
+PROD00004,Snacks & Chips - Product 4,Snacks & Chips,SKU000004,124.95,265,48,56
+PROD00005,Snacks & Chips - Product 5,Snacks & Chips,SKU000005,289.4,339,44,157
+PROD00006,Snacks & Chips - Product 6,Snacks & Chips,SKU000006,125.81,308,27,51
+PROD00007,Snacks & Chips - Product 7,Snacks & Chips,SKU000007,384.23,88,37,137
+PROD00008,Snacks & Chips - Product 8,Snacks & Chips,SKU000008,153.38,117,31,76
+PROD00009,Snacks & Chips - Product 9,Snacks & Chips,SKU000009,64.52,56,32,138
+PROD00010,Snacks & Chips - Product 10,Snacks & Chips,SKU000010,309.79,29,39,187
+PROD00011,Snacks & Chips - Product 11,Snacks & Chips,SKU000011,79.92,200,15,191
+PROD00012,Snacks & Chips - Product 12,Snacks & Chips,SKU000012,160.73,328,49,142
+PROD00013,Snacks & Chips - Product 13,Snacks & Chips,SKU000013,297.13,42,12,108
+PROD00014,Snacks & Chips - Product 14,Snacks & Chips,SKU000014,391.07,47,24,75
+PROD00015,Snacks & Chips - Product 15,Snacks & Chips,SKU000015,202.46,239,50,143
+PROD00016,Snacks & Chips - Product 16,Snacks & Chips,SKU000016,98.07,188,23,118
+PROD00017,Snacks & Chips - Product 17,Snacks & Chips,SKU000017,356.87,356,14,93
+PROD00018,Snacks & Chips - Product 18,Snacks & Chips,SKU000018,276.39,132,20,168
+PROD00019,Snacks & Chips - Product 19,Snacks & Chips,SKU000019,202.14,334,45,106
+PROD00020,Snacks & Chips - Product 20,Snacks & Chips,SKU000020,348.61,35,24,58
+PROD00021,Snacks & Chips - Product 21,Snacks & Chips,SKU000021,406.42,212,27,66
+PROD00022,Snacks & Chips - Product 22,Snacks & Chips,SKU000022,121.27,297,30,104
+PROD00023,Snacks & Chips - Product 23,Snacks & Chips,SKU000023,334.61,209,39,86
+PROD00024,Snacks & Chips - Product 24,Snacks & Chips,SKU000024,147.14,133,45,187
+PROD00025,Snacks & Chips - Product 25,Snacks & Chips,SKU000025,146.12,306,37,199
+PROD00026,Snacks & Chips - Product 26,Snacks & Chips,SKU000026,211.71,119,18,180
+PROD00027,Snacks & Chips - Product 27,Snacks & Chips,SKU000027,256.89,31,17,89
+PROD00028,Snacks & Chips - Product 28,Snacks & Chips,SKU000028,321.17,355,37,66
+PROD00029,Snacks & Chips - Product 29,Snacks & Chips,SKU000029,204.69,312,39,185
+PROD00030,Snacks & Chips - Product 30,Snacks & Chips,SKU000030,140.68,290,10,79
+PROD00031,Beverages - Product 1,Beverages,SKU000031,347.22,281,27,137
+PROD00032,Beverages - Product 2,Beverages,SKU000032,73.55,229,20,166
+PROD00033,Beverages - Product 3,Beverages,SKU000033,21.56,141,42,95
+PROD00034,Beverages - Product 4,Beverages,SKU000034,263.69,61,50,126
+PROD00035,Beverages - Product 5,Beverages,SKU000035,424.0,266,48,100
+PROD00036,Beverages - Product 6,Beverages,SKU000036,93.36,89,44,185
+PROD00037,Beverages - Product 7,Beverages,SKU000037,460.88,313,30,175
+PROD00038,Beverages - Product 8,Beverages,SKU000038,29.35,192,29,111
+PROD00039,Beverages - Product 9,Beverages,SKU000039,47.8,297,15,71
+PROD00040,Beverages - Product 10,Beverages,SKU000040,371.32,42,44,82
+PROD00041,Beverages - Product 11,Beverages,SKU000041,81.63,250,45,92
+PROD00042,Beverages - Product 12,Beverages,SKU000042,147.23,317,37,104
+PROD00043,Beverages - Product 13,Beverages,SKU000043,465.88,360,22,129
+PROD00044,Beverages - Product 14,Beverages,SKU000044,211.52,350,33,162
+PROD00045,Beverages - Product 15,Beverages,SKU000045,451.81,238,17,113
+PROD00046,Beverages - Product 16,Beverages,SKU000046,127.85,180,11,200
+PROD00047,Beverages - Product 17,Beverages,SKU000047,285.88,308,24,51
+PROD00048,Beverages - Product 18,Beverages,SKU000048,54.08,330,13,108
+PROD00049,Beverages - Product 19,Beverages,SKU000049,52.35,23,31,68
+PROD00050,Beverages - Product 20,Beverages,SKU000050,266.79,149,41,104
+PROD00051,Dairy & Milk - Product 1,Dairy & Milk,SKU000051,278.83,299,46,171
+PROD00052,Dairy & Milk - Product 2,Dairy & Milk,SKU000052,136.64,249,36,98
+PROD00053,Dairy & Milk - Product 3,Dairy & Milk,SKU000053,65.28,344,37,140
+PROD00054,Dairy & Milk - Product 4,Dairy & Milk,SKU000054,223.32,246,13,75
+PROD00055,Dairy & Milk - Product 5,Dairy & Milk,SKU000055,49.09,180,16,113
+PROD00056,Dairy & Milk - Product 6,Dairy & Milk,SKU000056,111.96,281,38,85
+PROD00057,Dairy & Milk - Product 7,Dairy & Milk,SKU000057,222.5,149,39,113
+PROD00058,Dairy & Milk - Product 8,Dairy & Milk,SKU000058,439.75,45,38,190
+PROD00059,Dairy & Milk - Product 9,Dairy & Milk,SKU000059,67.0,340,44,53
+PROD00060,Dairy & Milk - Product 10,Dairy & Milk,SKU000060,485.12,128,20,154
+PROD00061,Dairy & Milk - Product 11,Dairy & Milk,SKU000061,253.11,116,35,65
+PROD00062,Dairy & Milk - Product 12,Dairy & Milk,SKU000062,99.03,8,34,117
+PROD00063,Dairy & Milk - Product 13,Dairy & Milk,SKU000063,464.73,239,28,158
+PROD00064,Dairy & Milk - Product 14,Dairy & Milk,SKU000064,354.36,291,41,89
+PROD00065,Dairy & Milk - Product 15,Dairy & Milk,SKU000065,111.15,118,13,198
+PROD00066,Fruits & Vegetables - Product 1,Fruits & Vegetables,SKU000066,373.15,38,30,64
+PROD00067,Fruits & Vegetables - Product 2,Fruits & Vegetables,SKU000067,44.07,251,42,185
+PROD00068,Fruits & Vegetables - Product 3,Fruits & Vegetables,SKU000068,95.57,267,15,97
+PROD00069,Fruits & Vegetables - Product 4,Fruits & Vegetables,SKU000069,52.89,41,25,153
+PROD00070,Fruits & Vegetables - Product 5,Fruits & Vegetables,SKU000070,77.55,298,25,198
+PROD00071,Fruits & Vegetables - Product 6,Fruits & Vegetables,SKU000071,305.37,324,15,157
+PROD00072,Fruits & Vegetables - Product 7,Fruits & Vegetables,SKU000072,335.54,296,43,130
+PROD00073,Fruits & Vegetables - Product 8,Fruits & Vegetables,SKU000073,468.66,111,30,111
+PROD00074,Fruits & Vegetables - Product 9,Fruits & Vegetables,SKU000074,147.49,74,29,167
+PROD00075,Fruits & Vegetables - Product 10,Fruits & Vegetables,SKU000075,171.77,44,10,167
+PROD00076,Fruits & Vegetables - Product 11,Fruits & Vegetables,SKU000076,318.16,295,16,68
+PROD00077,Fruits & Vegetables - Product 12,Fruits & Vegetables,SKU000077,278.06,266,26,83
+PROD00078,Fruits & Vegetables - Product 13,Fruits & Vegetables,SKU000078,467.96,42,25,144
+PROD00079,Fruits & Vegetables - Product 14,Fruits & Vegetables,SKU000079,156.79,231,44,127
+PROD00080,Fruits & Vegetables - Product 15,Fruits & Vegetables,SKU000080,313.61,341,43,52
+PROD00081,Fruits & Vegetables - Product 16,Fruits & Vegetables,SKU000081,340.57,290,29,76
+PROD00082,Fruits & Vegetables - Product 17,Fruits & Vegetables,SKU000082,470.69,75,26,79
+PROD00083,Fruits & Vegetables - Product 18,Fruits & Vegetables,SKU000083,447.06,290,19,119
+PROD00084,Fruits & Vegetables - Product 19,Fruits & Vegetables,SKU000084,155.24,114,31,102
+PROD00085,Fruits & Vegetables - Product 20,Fruits & Vegetables,SKU000085,350.0,142,42,175
+PROD00086,Fruits & Vegetables - Product 21,Fruits & Vegetables,SKU000086,140.54,33,15,158
+PROD00087,Fruits & Vegetables - Product 22,Fruits & Vegetables,SKU000087,418.09,29,10,135
+PROD00088,Fruits & Vegetables - Product 23,Fruits & Vegetables,SKU000088,390.14,333,26,91
+PROD00089,Fruits & Vegetables - Product 24,Fruits & Vegetables,SKU000089,375.79,289,37,193
+PROD00090,Fruits & Vegetables - Product 25,Fruits & Vegetables,SKU000090,24.64,45,19,189
+PROD00091,Bakery - Product 1,Bakery,SKU000091,37.29,196,47,191
+PROD00092,Bakery - Product 2,Bakery,SKU000092,91.09,72,12,128
+PROD00093,Bakery - Product 3,Bakery,SKU000093,195.03,27,32,103
+PROD00094,Bakery - Product 4,Bakery,SKU000094,347.39,348,16,140
+PROD00095,Bakery - Product 5,Bakery,SKU000095,394.46,215,49,89
+PROD00096,Bakery - Product 6,Bakery,SKU000096,464.37,128,20,95
+PROD00097,Bakery - Product 7,Bakery,SKU000097,443.08,19,21,135
+PROD00098,Bakery - Product 8,Bakery,SKU000098,395.55,217,25,118
+PROD00099,Bakery - Product 9,Bakery,SKU000099,96.41,62,34,59
+PROD00100,Bakery - Product 10,Bakery,SKU000100,432.12,120,22,167
+PROD00101,Bakery - Product 11,Bakery,SKU000101,187.84,123,24,56
+PROD00102,Bakery - Product 12,Bakery,SKU000102,336.82,211,31,121
+PROD00103,Personal Care - Product 1,Personal Care,SKU000103,434.89,149,32,180
+PROD00104,Personal Care - Product 2,Personal Care,SKU000104,211.85,281,31,57
+PROD00105,Personal Care - Product 3,Personal Care,SKU000105,75.36,140,21,198
+PROD00106,Personal Care - Product 4,Personal Care,SKU000106,482.02,142,12,77
+PROD00107,Personal Care - Product 5,Personal Care,SKU000107,306.35,183,30,161
+PROD00108,Personal Care - Product 6,Personal Care,SKU000108,310.98,268,17,148
+PROD00109,Personal Care - Product 7,Personal Care,SKU000109,451.76,104,26,61
+PROD00110,Personal Care - Product 8,Personal Care,SKU000110,360.22,7,43,187
+PROD00111,Personal Care - Product 9,Personal Care,SKU000111,349.69,350,22,143
+PROD00112,Personal Care - Product 10,Personal Care,SKU000112,227.02,347,31,130
+PROD00113,Personal Care - Product 11,Personal Care,SKU000113,338.43,70,29,179
+PROD00114,Personal Care - Product 12,Personal Care,SKU000114,168.46,216,30,153
+PROD00115,Personal Care - Product 13,Personal Care,SKU000115,354.66,290,18,99
+PROD00116,Personal Care - Product 14,Personal Care,SKU000116,221.81,201,21,195
+PROD00117,Personal Care - Product 15,Personal Care,SKU000117,164.46,287,10,127
+PROD00118,Personal Care - Product 16,Personal Care,SKU000118,157.72,227,47,132
+PROD00119,Personal Care - Product 17,Personal Care,SKU000119,243.19,233,23,180
+PROD00120,Personal Care - Product 18,Personal Care,SKU000120,247.13,93,15,122
+PROD00121,Household - Product 1,Household,SKU000121,267.42,331,49,135
+PROD00122,Household - Product 2,Household,SKU000122,64.83,127,29,107
+PROD00123,Household - Product 3,Household,SKU000123,407.15,82,11,61
+PROD00124,Household - Product 4,Household,SKU000124,137.52,250,49,68
+PROD00125,Household - Product 5,Household,SKU000125,238.6,329,46,99
+PROD00126,Household - Product 6,Household,SKU000126,364.81,203,41,152
+PROD00127,Household - Product 7,Household,SKU000127,137.11,342,10,77
+PROD00128,Household - Product 8,Household,SKU000128,393.64,119,21,182
+PROD00129,Household - Product 9,Household,SKU000129,242.98,292,25,81
+PROD00130,Household - Product 10,Household,SKU000130,239.1,244,43,193
+PROD00131,Household - Product 11,Household,SKU000131,305.82,233,49,179
+PROD00132,Household - Product 12,Household,SKU000132,224.84,287,38,90
+PROD00133,Household - Product 13,Household,SKU000133,376.95,250,38,116
+PROD00134,Household - Product 14,Household,SKU000134,380.85,333,27,183
+PROD00135,Household - Product 15,Household,SKU000135,252.61,129,27,162
+PROD00136,Household - Product 16,Household,SKU000136,57.19,153,25,119
+PROD00137,Household - Product 17,Household,SKU000137,181.21,283,15,85
+PROD00138,Household - Product 18,Household,SKU000138,92.4,203,19,104
+PROD00139,Household - Product 19,Household,SKU000139,50.83,215,31,188
+PROD00140,Household - Product 20,Household,SKU000140,243.64,38,23,157
+PROD00141,Frozen Foods - Product 1,Frozen Foods,SKU000141,206.95,306,11,197
+PROD00142,Frozen Foods - Product 2,Frozen Foods,SKU000142,202.58,10,32,126
+PROD00143,Frozen Foods - Product 3,Frozen Foods,SKU000143,381.67,221,44,189
+PROD00144,Frozen Foods - Product 4,Frozen Foods,SKU000144,403.94,119,41,106
+PROD00145,Frozen Foods - Product 5,Frozen Foods,SKU000145,151.01,255,11,149
+PROD00146,Frozen Foods - Product 6,Frozen Foods,SKU000146,181.34,354,35,92
+PROD00147,Frozen Foods - Product 7,Frozen Foods,SKU000147,423.44,72,49,186
+PROD00148,Frozen Foods - Product 8,Frozen Foods,SKU000148,32.94,208,47,194
+PROD00149,Frozen Foods - Product 9,Frozen Foods,SKU000149,338.24,49,37,84
+PROD00150,Frozen Foods - Product 10,Frozen Foods,SKU000150,436.09,100,13,116

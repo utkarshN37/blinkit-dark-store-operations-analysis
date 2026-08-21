@@ -1,0 +1,41 @@
+performance_id,employee_id,employee_name,store_id,role,experience_months,report_period,putaway_transactions_count,damages_reported_count,avg_time_per_putaway_minutes,quality_score,attendance_score,punctuality_score,overall_performance_rating,damages_per_transaction_ratio,promotion_eligible,performance_level
+PERF000001,EMP0001,Pooja Gupta,S002,Assistant Manager,1,2026-05-01 to 2026-07-31,6,7,48.8,83.3,73.3,88.7,81.8,1.0,No,Good
+PERF000002,EMP0002,Pooja Singh,S004,Quality Checker,4,2026-05-01 to 2026-07-31,13,4,72.6,92.3,72.0,91.0,85.1,0.286,No,Excellent
+PERF000003,EMP0003,Pooja Reddy,S003,Team Lead - Putaway,6,2026-05-01 to 2026-07-31,10,8,67.8,80.0,80.9,83.3,81.4,0.727,No,Good
+PERF000004,EMP0004,Priya Reddy,S001,Assistant Manager,11,2026-05-01 to 2026-07-31,11,5,72.7,63.6,78.2,96.7,79.5,0.417,No,Good
+PERF000005,EMP0005,Rohan Singh,S005,Quality Checker,13,2026-05-01 to 2026-07-31,9,3,83.8,100.0,76.8,75.2,84.0,0.3,No,Good
+PERF000006,EMP0006,Kunal Reddy,S002,Store Manager,11,2026-05-01 to 2026-07-31,14,3,78.3,78.6,81.3,99.2,86.4,0.2,No,Excellent
+PERF000007,EMP0007,Vikram Kulkarni,S005,Store Manager,12,2026-05-01 to 2026-07-31,10,6,73.2,100.0,81.4,77.6,86.3,0.545,No,Excellent
+PERF000008,EMP0008,Anjali Sharma,S001,Warehouse Associate,23,2026-05-01 to 2026-07-31,21,6,65.9,90.5,97.8,79.4,89.2,0.273,Yes,Excellent
+PERF000009,EMP0009,Kunal Mehta,S001,Team Lead - Inventory,13,2026-05-01 to 2026-07-31,11,3,45.6,90.9,91.8,82.7,88.5,0.25,Yes,Excellent
+PERF000010,EMP0010,Kunal Verma,S004,Assistant Manager,18,2026-05-01 to 2026-07-31,18,7,54.4,83.3,94.6,87.2,88.4,0.368,Yes,Excellent
+PERF000011,EMP0011,Disha Reddy,S004,Team Lead - Inventory,15,2026-05-01 to 2026-07-31,16,7,64.5,93.8,85.9,92.5,90.7,0.412,Yes,Excellent
+PERF000012,EMP0012,Neha Singh,S002,Store Manager,10,2026-05-01 to 2026-07-31,13,4,62.2,100.0,96.0,88.8,94.9,0.286,Yes,Excellent
+PERF000013,EMP0013,Rohan Joshi,S005,Warehouse Associate,23,2026-05-01 to 2026-07-31,9,2,47.1,88.9,88.2,97.4,91.5,0.2,Yes,Excellent
+PERF000014,EMP0014,Sneha Joshi,S003,Assistant Manager,17,2026-05-01 to 2026-07-31,17,5,71.6,100.0,75.1,98.7,91.3,0.278,No,Excellent
+PERF000015,EMP0015,Disha Verma,S003,Team Lead - Putaway,21,2026-05-01 to 2026-07-31,13,4,65.4,76.9,81.7,83.6,80.7,0.286,No,Good
+PERF000016,EMP0016,Sneha Kulkarni,S005,Assistant Manager,3,2026-05-01 to 2026-07-31,8,5,54.4,100.0,92.2,99.2,97.1,0.556,Yes,Excellent
+PERF000017,EMP0017,Kunal Mehta,S002,Quality Checker,17,2026-05-01 to 2026-07-31,18,2,51.6,94.4,86.0,89.9,90.1,0.105,Yes,Excellent
+PERF000018,EMP0018,Rohan Singh,S001,Team Lead - Putaway,8,2026-05-01 to 2026-07-31,12,7,53.4,91.7,95.5,86.9,91.4,0.538,Yes,Excellent
+PERF000019,EMP0019,Vikram Yadav,S005,Team Lead - Putaway,17,2026-05-01 to 2026-07-31,11,4,53.8,81.8,73.8,75.2,76.9,0.333,No,Good
+PERF000020,EMP0020,Disha Mehta,S005,Team Lead - Putaway,13,2026-05-01 to 2026-07-31,7,4,45.1,100.0,85.4,78.9,88.1,0.5,Yes,Excellent
+PERF000021,EMP0021,Disha Singh,S003,Assistant Manager,5,2026-05-01 to 2026-07-31,13,5,67.2,76.9,73.8,84.5,78.4,0.357,No,Good
+PERF000022,EMP0022,Sneha Singh,S005,Quality Checker,7,2026-05-01 to 2026-07-31,10,4,59.2,100.0,92.1,76.3,89.5,0.364,Yes,Excellent
+PERF000023,EMP0023,Vikram Reddy,S003,Quality Checker,21,2026-05-01 to 2026-07-31,12,4,43.8,83.3,91.8,99.4,91.5,0.308,Yes,Excellent
+PERF000024,EMP0024,Anjali Gupta,S002,Team Lead - Putaway,8,2026-05-01 to 2026-07-31,7,2,56.0,85.7,91.2,81.2,86.0,0.25,Yes,Excellent
+PERF000025,EMP0025,Rajesh Sharma,S005,Assistant Manager,10,2026-05-01 to 2026-07-31,12,4,48.5,91.7,88.3,92.7,90.9,0.308,Yes,Excellent
+PERF000026,EMP0026,Priya Sharma,S002,Quality Checker,17,2026-05-01 to 2026-07-31,14,0,62.6,92.9,75.5,99.7,89.4,0.0,No,Excellent
+PERF000027,EMP0027,Anjali Gupta,S004,Team Lead - Inventory,16,2026-05-01 to 2026-07-31,14,11,88.9,78.6,94.0,87.6,86.7,0.733,No,Excellent
+PERF000028,EMP0028,Rohan Mehta,S004,Store Manager,3,2026-05-01 to 2026-07-31,12,6,65.9,91.7,78.3,85.7,85.2,0.462,No,Excellent
+PERF000029,EMP0029,Pooja Verma,S001,Assistant Manager,6,2026-05-01 to 2026-07-31,17,6,61.1,94.1,98.3,97.0,96.5,0.333,Yes,Excellent
+PERF000030,EMP0030,Pooja Reddy,S001,Warehouse Associate,15,2026-05-01 to 2026-07-31,18,10,58.6,100.0,94.4,82.6,92.3,0.526,Yes,Excellent
+PERF000031,EMP0031,Neha Mehta,S002,Warehouse Associate,13,2026-05-01 to 2026-07-31,12,8,68.8,100.0,95.7,98.7,98.1,0.615,Yes,Excellent
+PERF000032,EMP0032,Pooja Sharma,S004,Team Lead - Putaway,20,2026-05-01 to 2026-07-31,19,6,64.8,100.0,82.2,82.8,88.3,0.3,No,Excellent
+PERF000033,EMP0033,Sneha Verma,S001,Assistant Manager,22,2026-05-01 to 2026-07-31,10,4,52.0,60.0,72.7,77.0,69.9,0.364,No,Average
+PERF000034,EMP0034,Vikram Patel,S002,Assistant Manager,6,2026-05-01 to 2026-07-31,5,2,56.6,100.0,91.9,98.6,96.8,0.333,Yes,Excellent
+PERF000035,EMP0035,Neha Verma,S004,Team Lead - Inventory,21,2026-05-01 to 2026-07-31,11,7,82.5,90.9,75.0,76.4,80.8,0.583,No,Good
+PERF000036,EMP0036,Disha Mehta,S003,Quality Checker,10,2026-05-01 to 2026-07-31,11,6,51.8,100.0,92.3,88.9,93.7,0.5,Yes,Excellent
+PERF000037,EMP0037,Pooja Singh,S002,Team Lead - Putaway,22,2026-05-01 to 2026-07-31,13,4,77.8,76.9,84.8,96.9,86.2,0.286,No,Excellent
+PERF000038,EMP0038,Amit Verma,S005,Assistant Manager,23,2026-05-01 to 2026-07-31,14,3,65.8,92.9,98.9,85.6,92.5,0.2,Yes,Excellent
+PERF000039,EMP0039,Suresh Reddy,S001,Store Manager,6,2026-05-01 to 2026-07-31,17,4,56.1,100.0,85.3,93.3,92.9,0.222,Yes,Excellent
+PERF000040,EMP0040,Neha Verma,S003,Team Lead - Inventory,5,2026-05-01 to 2026-07-31,12,8,56.0,75.0,84.4,87.9,82.4,0.615,No,Good

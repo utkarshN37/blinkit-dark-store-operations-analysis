@@ -1,0 +1,101 @@
+audit_id,audit_date,audit_time,store_id,auditor_emp_id,auditor_name,product_id,sku,product_name,category,system_quantity,physical_quantity,quantity_variance,variance_percentage,finding,shelf_location,expiry_date_found,action_taken,resolution_date,rectification_remarks
+AUD000001,2026-04-28,08:45,S005,EMP0007,Vikram Kulkarni,PROD00104,SKU000104,Personal Care - Product 2,Personal Care,21,19,-2,-9.52,Duplicate SKU,D9-3,2026-06-28,Corrected,2026-05-03,None
+AUD000002,2026-07-02,16:22,S005,EMP0016,Sneha Kulkarni,PROD00045,SKU000045,Beverages - Product 15,Beverages,29,26,-3,-10.34,Understock,A7-4,2026-04-20,Under Investigation,2026-07-05,None
+AUD000003,2026-06-10,12:16,S002,EMP0037,Pooja Singh,PROD00031,SKU000031,Beverages - Product 1,Beverages,57,49,-8,-14.04,Understock,B1-5,2026-04-13,Under Investigation,2026-06-13,None
+AUD000004,2026-05-19,17:29,S001,EMP0009,Kunal Mehta,PROD00125,SKU000125,Household - Product 5,Household,27,26,-1,-3.7,Understock,C5-3,2026-09-07,Corrected,2026-05-22,None
+AUD000005,2026-06-30,11:05,S004,EMP0027,Anjali Gupta,PROD00003,SKU000003,Snacks & Chips - Product 3,Snacks & Chips,32,34,2,6.25,Misplaced Item,E9-2,2026-04-04,Corrected,2026-07-04,Corrected in system
+AUD000006,2026-07-04,13:27,S003,EMP0040,Neha Verma,PROD00121,SKU000121,Household - Product 1,Household,70,65,-5,-7.14,Understock,B9-3,2026-09-06,Restocked,2026-07-10,None
+AUD000007,2026-07-03,09:12,S002,EMP0026,Priya Sharma,PROD00112,SKU000112,Personal Care - Product 10,Personal Care,20,16,-4,-20.0,Understock,C1-2,2026-04-12,Restocked,2026-07-09,None
+AUD000008,2026-07-19,14:31,S002,EMP0017,Kunal Mehta,PROD00123,SKU000123,Household - Product 3,Household,54,54,0,0.0,Stock Match,E8-2,2026-05-18,Restocked,2026-07-24,None
+AUD000009,2026-06-04,13:32,S002,EMP0006,Kunal Reddy,PROD00028,SKU000028,Snacks & Chips - Product 28,Snacks & Chips,22,25,3,13.64,Overstock,A4-1,2026-05-09,Restocked,2026-06-09,None
+AUD000010,2026-07-22,14:15,S004,EMP0027,Anjali Gupta,PROD00075,SKU000075,Fruits & Vegetables - Product 10,Fruits & Vegetables,56,52,-4,-7.14,Misplaced Item,E3-5,2026-07-28,Under Investigation,2026-07-25,None
+AUD000011,2026-07-09,16:39,S003,EMP0040,Neha Verma,PROD00110,SKU000110,Personal Care - Product 8,Personal Care,45,41,-4,-8.89,Misplaced Item,B4-5,2026-08-16,Under Investigation,2026-07-10,None
+AUD000012,2026-06-02,17:12,S001,EMP0009,Kunal Mehta,PROD00050,SKU000050,Beverages - Product 20,Beverages,38,33,-5,-13.16,Misplaced Item,A1-4,2026-04-06,Marked for Disposal,2026-06-08,None
+AUD000013,2026-06-24,16:27,S002,EMP0026,Priya Sharma,PROD00110,SKU000110,Personal Care - Product 8,Personal Care,81,81,0,0.0,Stock Match,A5-1,2026-06-16,Marked for Disposal,2026-06-27,None
+AUD000014,2026-05-31,08:03,S002,EMP0026,Priya Sharma,PROD00013,SKU000013,Snacks & Chips - Product 13,Snacks & Chips,43,43,0,0.0,Stock Match,C4-3,2026-03-04,Marked for Disposal,2026-06-05,None
+AUD000015,2026-05-29,09:06,S002,EMP0024,Anjali Gupta,PROD00126,SKU000126,Household - Product 6,Household,66,61,-5,-7.58,Understock,A9-2,2026-05-15,Marked for Disposal,2026-06-04,None
+AUD000016,2026-05-09,14:05,S005,EMP0020,Disha Mehta,PROD00061,SKU000061,Dairy & Milk - Product 11,Dairy & Milk,55,65,10,18.18,Overstock,A3-5,2026-08-31,Corrected,2026-05-14,None
+AUD000017,2026-06-29,13:19,S002,EMP0034,Vikram Patel,PROD00026,SKU000026,Snacks & Chips - Product 26,Snacks & Chips,29,33,4,13.79,Duplicate SKU,D4-5,2026-08-14,Corrected,2026-07-01,None
+AUD000018,2026-05-31,18:45,S005,EMP0019,Vikram Yadav,PROD00144,SKU000144,Frozen Foods - Product 4,Frozen Foods,64,56,-8,-12.5,Understock,A7-1,2026-02-26,Restocked,2026-06-05,None
+AUD000019,2026-07-21,17:03,S002,EMP0024,Anjali Gupta,PROD00034,SKU000034,Beverages - Product 4,Beverages,57,57,0,0.0,Stock Match,B7-4,2026-02-01,Corrected,2026-07-23,None
+AUD000020,2026-05-19,11:11,S004,EMP0035,Neha Verma,PROD00100,SKU000100,Bakery - Product 10,Bakery,71,70,-1,-1.41,Duplicate SKU,A3-5,2026-07-12,Corrected,2026-05-26,None
+AUD000021,2026-05-26,12:45,S005,EMP0038,Amit Verma,PROD00067,SKU000067,Fruits & Vegetables - Product 2,Fruits & Vegetables,58,56,-2,-3.45,Damaged Stock Found,C9-1,2026-08-05,Under Investigation,2026-05-27,None
+AUD000022,2026-06-23,08:41,S003,EMP0040,Neha Verma,PROD00038,SKU000038,Beverages - Product 8,Beverages,55,60,5,9.09,Overstock,B4-5,2026-09-02,Corrected,2026-06-29,None
+AUD000023,2026-05-04,12:46,S005,EMP0020,Disha Mehta,PROD00084,SKU000084,Fruits & Vegetables - Product 19,Fruits & Vegetables,30,33,3,10.0,Expired Product Found,B7-5,2026-06-03,Marked for Disposal,2026-05-05,None
+AUD000024,2026-07-22,16:42,S003,EMP0040,Neha Verma,PROD00072,SKU000072,Fruits & Vegetables - Product 7,Fruits & Vegetables,42,41,-1,-2.38,Understock,E2-4,2026-06-22,Under Investigation,2026-07-29,None
+AUD000025,2026-06-25,10:28,S003,EMP0040,Neha Verma,PROD00053,SKU000053,Dairy & Milk - Product 3,Dairy & Milk,94,95,1,1.06,Expired Product Found,B7-3,2026-08-17,Restocked,2026-06-26,None
+AUD000026,2026-06-30,10:41,S004,EMP0011,Disha Reddy,PROD00046,SKU000046,Beverages - Product 16,Beverages,44,46,2,4.55,Duplicate SKU,C1-3,2026-08-09,Under Investigation,2026-07-07,None
+AUD000027,2026-04-27,14:15,S005,EMP0016,Sneha Kulkarni,PROD00018,SKU000018,Snacks & Chips - Product 18,Snacks & Chips,38,38,0,0.0,Stock Match,D7-1,2026-02-04,Under Investigation,2026-05-03,None
+AUD000028,2026-07-22,09:52,S005,EMP0007,Vikram Kulkarni,PROD00097,SKU000097,Bakery - Product 7,Bakery,69,69,0,0.0,Stock Match,A1-2,2026-06-26,Corrected,2026-07-25,None
+AUD000029,2026-05-04,09:12,S005,EMP0005,Rohan Singh,PROD00003,SKU000003,Snacks & Chips - Product 3,Snacks & Chips,33,33,0,0.0,Duplicate SKU,B8-5,2026-03-18,Under Investigation,2026-05-07,None
+AUD000030,2026-05-23,18:34,S002,EMP0017,Kunal Mehta,PROD00015,SKU000015,Snacks & Chips - Product 15,Snacks & Chips,89,88,-1,-1.12,Expired Product Found,A1-1,2026-09-09,Marked for Disposal,2026-05-24,None
+AUD000031,2026-05-31,14:09,S002,EMP0001,Pooja Gupta,PROD00058,SKU000058,Dairy & Milk - Product 8,Dairy & Milk,23,30,7,30.43,Overstock,C5-2,2026-04-18,Corrected,2026-06-04,None
+AUD000032,2026-07-09,17:21,S002,EMP0006,Kunal Reddy,PROD00073,SKU000073,Fruits & Vegetables - Product 8,Fruits & Vegetables,65,65,0,0.0,Stock Match,A6-1,2026-10-09,Under Investigation,2026-07-11,None
+AUD000033,2026-05-17,12:39,S003,EMP0040,Neha Verma,PROD00109,SKU000109,Personal Care - Product 7,Personal Care,39,44,5,12.82,Expired Product Found,C6-1,2026-06-15,Restocked,2026-05-23,None
+AUD000034,2026-06-20,14:28,S001,EMP0009,Kunal Mehta,PROD00039,SKU000039,Beverages - Product 9,Beverages,38,35,-3,-7.89,Understock,D2-1,2026-01-09,Restocked,2026-06-26,None
+AUD000035,2026-07-05,13:20,S001,EMP0009,Kunal Mehta,PROD00033,SKU000033,Beverages - Product 3,Beverages,43,44,1,2.33,Damaged Stock Found,D7-4,2026-04-03,Marked for Disposal,2026-07-07,None
+AUD000036,2026-06-22,15:34,S004,EMP0027,Anjali Gupta,PROD00141,SKU000141,Frozen Foods - Product 1,Frozen Foods,83,86,3,3.61,Duplicate SKU,E4-4,2026-09-19,Restocked,2026-06-27,None
+AUD000037,2026-04-26,11:54,S002,EMP0006,Kunal Reddy,PROD00061,SKU000061,Dairy & Milk - Product 11,Dairy & Milk,66,66,0,0.0,Stock Match,A6-5,2026-03-03,Under Investigation,2026-04-27,None
+AUD000038,2026-06-09,14:15,S003,EMP0040,Neha Verma,PROD00076,SKU000076,Fruits & Vegetables - Product 11,Fruits & Vegetables,78,87,9,11.54,Overstock,B4-1,2026-08-22,Corrected,2026-06-15,None
+AUD000039,2026-07-05,09:42,S004,EMP0035,Neha Verma,PROD00007,SKU000007,Snacks & Chips - Product 7,Snacks & Chips,74,73,-1,-1.35,Understock,E2-4,2026-08-12,Corrected,2026-07-07,None
+AUD000040,2026-07-05,10:48,S001,EMP0009,Kunal Mehta,PROD00020,SKU000020,Snacks & Chips - Product 20,Snacks & Chips,21,22,1,4.76,Duplicate SKU,B8-2,2026-02-03,Marked for Disposal,2026-07-09,None
+AUD000041,2026-06-10,10:03,S004,EMP0035,Neha Verma,PROD00004,SKU000004,Snacks & Chips - Product 4,Snacks & Chips,56,56,0,0.0,Stock Match,A10-2,2026-02-16,Under Investigation,2026-06-11,None
+AUD000042,2026-05-30,11:27,S004,EMP0035,Neha Verma,PROD00067,SKU000067,Fruits & Vegetables - Product 2,Fruits & Vegetables,93,92,-1,-1.08,Duplicate SKU,B5-1,2026-02-06,Restocked,2026-06-01,None
+AUD000043,2026-06-26,16:38,S004,EMP0035,Neha Verma,PROD00015,SKU000015,Snacks & Chips - Product 15,Snacks & Chips,48,45,-3,-6.25,Misplaced Item,A8-4,2026-05-24,Restocked,2026-07-03,None
+AUD000044,2026-07-02,09:04,S001,EMP0009,Kunal Mehta,PROD00109,SKU000109,Personal Care - Product 7,Personal Care,44,42,-2,-4.55,Understock,C10-3,2026-10-17,Under Investigation,2026-07-05,None
+AUD000045,2026-05-15,12:12,S001,EMP0009,Kunal Mehta,PROD00055,SKU000055,Dairy & Milk - Product 5,Dairy & Milk,96,96,0,0.0,Stock Match,E4-1,2026-06-30,Marked for Disposal,2026-05-16,None
+AUD000046,2026-05-12,12:00,S001,EMP0009,Kunal Mehta,PROD00012,SKU000012,Snacks & Chips - Product 12,Snacks & Chips,26,24,-2,-7.69,Understock,C5-4,2026-02-17,Under Investigation,2026-05-15,None
+AUD000047,2026-06-03,09:32,S003,EMP0040,Neha Verma,PROD00025,SKU000025,Snacks & Chips - Product 25,Snacks & Chips,62,65,3,4.84,Misplaced Item,B1-5,2026-04-19,Restocked,2026-06-08,None
+AUD000048,2026-06-16,11:56,S002,EMP0012,Neha Singh,PROD00119,SKU000119,Personal Care - Product 17,Personal Care,30,26,-4,-13.33,Expired Product Found,B3-2,2026-02-17,Marked for Disposal,2026-06-20,None
+AUD000049,2026-06-10,14:15,S003,EMP0040,Neha Verma,PROD00111,SKU000111,Personal Care - Product 9,Personal Care,25,30,5,20.0,Expired Product Found,B10-5,2026-09-23,Under Investigation,2026-06-15,None
+AUD000050,2026-05-21,15:06,S001,EMP0009,Kunal Mehta,PROD00037,SKU000037,Beverages - Product 7,Beverages,59,55,-4,-6.78,Duplicate SKU,D6-2,2026-06-02,Under Investigation,2026-05-22,None
+AUD000051,2026-05-11,12:30,S003,EMP0040,Neha Verma,PROD00023,SKU000023,Snacks & Chips - Product 23,Snacks & Chips,29,37,8,27.59,Overstock,C8-2,2026-08-29,Restocked,2026-05-12,None
+AUD000052,2026-06-17,17:20,S004,EMP0027,Anjali Gupta,PROD00034,SKU000034,Beverages - Product 4,Beverages,76,67,-9,-11.84,Understock,C2-4,2026-02-14,Restocked,2026-06-20,None
+AUD000053,2026-07-18,10:54,S005,EMP0005,Rohan Singh,PROD00063,SKU000063,Dairy & Milk - Product 13,Dairy & Milk,91,91,0,0.0,Stock Match,A5-4,2026-08-11,Restocked,2026-07-25,None
+AUD000054,2026-06-25,18:34,S004,EMP0027,Anjali Gupta,PROD00024,SKU000024,Snacks & Chips - Product 24,Snacks & Chips,64,66,2,3.12,Misplaced Item,D2-1,2026-07-31,Corrected,2026-06-29,None
+AUD000055,2026-05-29,17:31,S002,EMP0031,Neha Mehta,PROD00085,SKU000085,Fruits & Vegetables - Product 20,Fruits & Vegetables,28,22,-6,-21.43,Understock,B8-1,2026-06-11,Restocked,2026-05-30,None
+AUD000056,2026-07-04,17:49,S004,EMP0011,Disha Reddy,PROD00055,SKU000055,Dairy & Milk - Product 5,Dairy & Milk,60,55,-5,-8.33,Duplicate SKU,D1-3,2026-03-25,Restocked,2026-07-06,None
+AUD000057,2026-06-26,09:09,S001,EMP0009,Kunal Mehta,PROD00070,SKU000070,Fruits & Vegetables - Product 5,Fruits & Vegetables,52,49,-3,-5.77,Expired Product Found,A5-4,2026-09-20,Marked for Disposal,2026-07-03,None
+AUD000058,2026-05-27,09:57,S004,EMP0035,Neha Verma,PROD00055,SKU000055,Dairy & Milk - Product 5,Dairy & Milk,53,54,1,1.89,Overstock,D6-3,2026-08-08,Under Investigation,2026-05-30,None
+AUD000059,2026-05-23,14:52,S004,EMP0035,Neha Verma,PROD00042,SKU000042,Beverages - Product 12,Beverages,75,65,-10,-13.33,Understock,A9-5,2026-07-22,Corrected,2026-05-29,None
+AUD000060,2026-05-10,10:57,S005,EMP0013,Rohan Joshi,PROD00083,SKU000083,Fruits & Vegetables - Product 18,Fruits & Vegetables,60,60,0,0.0,Stock Match,D3-4,2026-05-22,Corrected,2026-05-17,None
+AUD000061,2026-06-01,18:37,S003,EMP0040,Neha Verma,PROD00116,SKU000116,Personal Care - Product 14,Personal Care,36,38,2,5.56,Expired Product Found,A1-2,2026-07-27,Restocked,2026-06-07,None
+AUD000062,2026-07-02,18:36,S005,EMP0022,Sneha Singh,PROD00056,SKU000056,Dairy & Milk - Product 6,Dairy & Milk,64,68,4,6.25,Overstock,A6-3,2026-10-23,Marked for Disposal,2026-07-05,None
+AUD000063,2026-07-08,13:53,S004,EMP0035,Neha Verma,PROD00117,SKU000117,Personal Care - Product 15,Personal Care,72,72,0,0.0,Misplaced Item,E7-5,2026-05-13,Corrected,2026-07-10,None
+AUD000064,2026-05-30,14:24,S003,EMP0040,Neha Verma,PROD00142,SKU000142,Frozen Foods - Product 2,Frozen Foods,96,105,9,9.38,Overstock,C7-3,2026-09-11,Corrected,2026-06-06,None
+AUD000065,2026-07-12,16:06,S001,EMP0009,Kunal Mehta,PROD00027,SKU000027,Snacks & Chips - Product 27,Snacks & Chips,83,87,4,4.82,Expired Product Found,D9-5,2026-10-15,Marked for Disposal,2026-07-19,None
+AUD000066,2026-06-26,11:54,S002,EMP0034,Vikram Patel,PROD00142,SKU000142,Frozen Foods - Product 2,Frozen Foods,68,68,0,0.0,Stock Match,D2-3,2026-03-08,Restocked,2026-07-03,None
+AUD000067,2026-04-24,12:56,S004,EMP0011,Disha Reddy,PROD00096,SKU000096,Bakery - Product 6,Bakery,48,47,-1,-2.08,Duplicate SKU,C5-4,2026-06-30,Corrected,2026-04-28,None
+AUD000068,2026-07-22,13:21,S001,EMP0009,Kunal Mehta,PROD00096,SKU000096,Bakery - Product 6,Bakery,86,90,4,4.65,Damaged Stock Found,B10-4,2026-06-30,Restocked,2026-07-24,None
+AUD000069,2026-05-02,10:25,S004,EMP0011,Disha Reddy,PROD00148,SKU000148,Frozen Foods - Product 8,Frozen Foods,74,81,7,9.46,Overstock,C9-2,2026-03-22,Under Investigation,2026-05-03,None
+AUD000070,2026-07-07,12:53,S005,EMP0007,Vikram Kulkarni,PROD00148,SKU000148,Frozen Foods - Product 8,Frozen Foods,70,75,5,7.14,Damaged Stock Found,E3-3,2026-07-19,Corrected,2026-07-08,None
+AUD000071,2026-05-29,09:36,S001,EMP0009,Kunal Mehta,PROD00008,SKU000008,Snacks & Chips - Product 8,Snacks & Chips,99,102,3,3.03,Expired Product Found,D1-2,2026-03-13,Marked for Disposal,2026-05-31,None
+AUD000072,2026-05-01,14:49,S002,EMP0024,Anjali Gupta,PROD00050,SKU000050,Beverages - Product 20,Beverages,88,86,-2,-2.27,Damaged Stock Found,C1-3,2026-09-19,Under Investigation,2026-05-07,None
+AUD000073,2026-05-03,09:09,S005,EMP0007,Vikram Kulkarni,PROD00029,SKU000029,Snacks & Chips - Product 29,Snacks & Chips,78,74,-4,-5.13,Duplicate SKU,C5-2,2026-09-14,Corrected,2026-05-07,None
+AUD000074,2026-06-27,15:40,S004,EMP0011,Disha Reddy,PROD00126,SKU000126,Household - Product 6,Household,22,18,-4,-18.18,Misplaced Item,A4-4,2026-04-22,Marked for Disposal,2026-07-03,None
+AUD000075,2026-07-03,18:38,S002,EMP0024,Anjali Gupta,PROD00003,SKU000003,Snacks & Chips - Product 3,Snacks & Chips,42,46,4,9.52,Expired Product Found,A2-3,2026-05-07,Restocked,2026-07-08,None
+AUD000076,2026-05-15,11:38,S001,EMP0009,Kunal Mehta,PROD00134,SKU000134,Household - Product 14,Household,52,52,0,0.0,Stock Match,A9-1,2026-02-08,Under Investigation,2026-05-17,None
+AUD000077,2026-07-09,10:17,S002,EMP0001,Pooja Gupta,PROD00084,SKU000084,Fruits & Vegetables - Product 19,Fruits & Vegetables,37,39,2,5.41,Overstock,C8-2,2026-09-14,Marked for Disposal,2026-07-15,None
+AUD000078,2026-05-01,11:16,S003,EMP0040,Neha Verma,PROD00127,SKU000127,Household - Product 7,Household,75,76,1,1.33,Duplicate SKU,B4-3,2026-04-13,Corrected,2026-05-06,None
+AUD000079,2026-05-09,14:38,S003,EMP0040,Neha Verma,PROD00053,SKU000053,Dairy & Milk - Product 3,Dairy & Milk,82,84,2,2.44,Misplaced Item,C6-5,2026-09-06,Restocked,2026-05-13,None
+AUD000080,2026-05-12,16:16,S003,EMP0040,Neha Verma,PROD00017,SKU000017,Snacks & Chips - Product 17,Snacks & Chips,77,78,1,1.3,Overstock,E7-3,2026-02-02,Marked for Disposal,2026-05-16,None
+AUD000081,2026-07-09,09:13,S002,EMP0026,Priya Sharma,PROD00110,SKU000110,Personal Care - Product 8,Personal Care,43,39,-4,-9.3,Understock,C6-2,2026-05-24,Corrected,2026-07-10,None
+AUD000082,2026-04-26,11:35,S001,EMP0009,Kunal Mehta,PROD00055,SKU000055,Dairy & Milk - Product 5,Dairy & Milk,79,79,0,0.0,Duplicate SKU,A7-3,2026-07-15,Under Investigation,2026-04-27,None
+AUD000083,2026-06-18,13:52,S005,EMP0007,Vikram Kulkarni,PROD00147,SKU000147,Frozen Foods - Product 7,Frozen Foods,73,74,1,1.37,Expired Product Found,C4-2,2026-10-06,Restocked,2026-06-22,None
+AUD000084,2026-06-18,13:37,S004,EMP0011,Disha Reddy,PROD00032,SKU000032,Beverages - Product 2,Beverages,77,87,10,12.99,Overstock,D4-5,2026-10-21,Marked for Disposal,2026-06-19,None
+AUD000085,2026-05-11,08:57,S001,EMP0009,Kunal Mehta,PROD00073,SKU000073,Fruits & Vegetables - Product 8,Fruits & Vegetables,36,37,1,2.78,Damaged Stock Found,E9-1,2026-05-12,Corrected,2026-05-12,None
+AUD000086,2026-07-11,14:05,S004,EMP0035,Neha Verma,PROD00078,SKU000078,Fruits & Vegetables - Product 13,Fruits & Vegetables,55,49,-6,-10.91,Understock,E6-4,2026-10-07,Restocked,2026-07-14,None
+AUD000087,2026-05-26,08:14,S004,EMP0035,Neha Verma,PROD00032,SKU000032,Beverages - Product 2,Beverages,67,63,-4,-5.97,Duplicate SKU,A1-2,2026-09-08,Marked for Disposal,2026-06-02,None
+AUD000088,2026-05-29,16:00,S002,EMP0012,Neha Singh,PROD00023,SKU000023,Snacks & Chips - Product 23,Snacks & Chips,44,44,0,0.0,Expired Product Found,A5-1,2026-09-05,Corrected,2026-06-01,None
+AUD000089,2026-06-20,15:07,S003,EMP0040,Neha Verma,PROD00070,SKU000070,Fruits & Vegetables - Product 5,Fruits & Vegetables,41,51,10,24.39,Overstock,B6-2,2026-01-05,Restocked,2026-06-26,None
+AUD000090,2026-04-29,12:20,S001,EMP0009,Kunal Mehta,PROD00148,SKU000148,Frozen Foods - Product 8,Frozen Foods,81,83,2,2.47,Expired Product Found,D4-1,2026-06-18,Marked for Disposal,2026-05-05,None
+AUD000091,2026-06-08,15:03,S005,EMP0016,Sneha Kulkarni,PROD00053,SKU000053,Dairy & Milk - Product 3,Dairy & Milk,29,29,0,0.0,Stock Match,B1-2,2026-03-06,Restocked,2026-06-10,None
+AUD000092,2026-07-10,12:45,S003,EMP0040,Neha Verma,PROD00136,SKU000136,Household - Product 16,Household,85,85,0,0.0,Damaged Stock Found,D3-5,2026-09-07,Under Investigation,2026-07-12,None
+AUD000093,2026-06-04,11:04,S004,EMP0035,Neha Verma,PROD00132,SKU000132,Household - Product 12,Household,45,46,1,2.22,Damaged Stock Found,C7-2,2026-05-27,Corrected,2026-06-06,None
+AUD000094,2026-07-10,08:30,S001,EMP0009,Kunal Mehta,PROD00005,SKU000005,Snacks & Chips - Product 5,Snacks & Chips,78,83,5,6.41,Overstock,E8-3,2026-06-18,Corrected,2026-07-15,None
+AUD000095,2026-06-08,16:21,S004,EMP0011,Disha Reddy,PROD00039,SKU000039,Beverages - Product 9,Beverages,70,71,1,1.43,Duplicate SKU,A8-3,2026-04-25,Corrected,2026-06-09,None
+AUD000096,2026-06-05,17:17,S004,EMP0011,Disha Reddy,PROD00076,SKU000076,Fruits & Vegetables - Product 11,Fruits & Vegetables,44,41,-3,-6.82,Misplaced Item,E10-4,2026-02-08,Restocked,2026-06-06,None
+AUD000097,2026-07-17,08:36,S002,EMP0006,Kunal Reddy,PROD00057,SKU000057,Dairy & Milk - Product 7,Dairy & Milk,34,34,0,0.0,Stock Match,C4-1,2026-02-01,Corrected,2026-07-20,None
+AUD000098,2026-05-05,15:13,S004,EMP0027,Anjali Gupta,PROD00101,SKU000101,Bakery - Product 11,Bakery,32,37,5,15.62,Overstock,B4-3,2026-06-06,Marked for Disposal,2026-05-11,Corrected in system
+AUD000099,2026-07-11,10:20,S002,EMP0037,Pooja Singh,PROD00123,SKU000123,Household - Product 3,Household,59,57,-2,-3.39,Damaged Stock Found,A3-2,2026-05-14,Restocked,2026-07-13,Waiting for supplier response
+AUD000100,2026-04-29,09:10,S004,EMP0027,Anjali Gupta,PROD00086,SKU000086,Fruits & Vegetables - Product 21,Fruits & Vegetables,22,27,5,22.73,Overstock,A10-3,2026-03-03,Corrected,2026-05-03,None
