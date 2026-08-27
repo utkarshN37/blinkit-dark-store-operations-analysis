@@ -1,4 +1,10 @@
-# Blinkit Dark Store Operations
+# Blinkit Dark Store Operations Intelligence
+
+**AI-powered operational analytics for dark-store loss management**
+
+🔗 **Live App:** https://blinkit-dark-store-operations-analysis-5afrbask3sczomn5y57j6d.streamlit.app/
+
+---
 ## Loss Attribution & Efficiency Analysis
 
 <p align="center">
