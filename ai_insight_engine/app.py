@@ -266,55 +266,48 @@ with s_col5:
 
 
 # ============================================================
-# AI EXECUTIVE BRIEF (NARRATIVE ONLY)
+# OLLAMA AVAILABILITY CHECK
+# ============================================================
+
+@st.cache_data(ttl=60)
+def check_ollama_available() -> bool:
+    """
+    Check whether local Ollama service is reachable.
+    """
+    try:
+        import ollama
+        ollama.list()
+        return True
+    except Exception:
+        return False
+
+
+# ============================================================
+# AI EXECUTIVE BRIEF
 # ============================================================
 
 st.divider()
 
 st.subheader("🤖 AI Executive Brief")
 
-st.markdown(
-    "Generate an executive summary interpreting verified analytical findings using local AI (Ollama - Llama 3.2 3B)."
-)
+ollama_online = check_ollama_available()
 
-if "ai_brief" not in st.session_state:
-    st.session_state["ai_brief"] = None
-    st.session_state["is_fallback"] = False
+if not ollama_online:
+    st.info(
+        "💡 **AI Executive Brief is available in the local desktop version because Ollama runs locally.** "
+        "Displaying verified deterministic Python analytical insights below for cloud deployment."
+    )
 
-if st.button("Generate AI Executive Brief", type="primary"):
-    with st.spinner("🤖 Connecting to local AI (Ollama - Llama 3.2 3B)..."):
-        try:
-            raw_ai_output = generate_ai_insight(insights)
-            brief, errors = validate_ai_output(raw_ai_output, insights)
-
-            if errors or not brief:
-                st.session_state["ai_brief"] = create_fallback_insight(insights)
-                st.session_state["is_fallback"] = True
-            else:
-                st.session_state["ai_brief"] = brief
-                st.session_state["is_fallback"] = False
-
-        except Exception as e:
-            st.session_state["ai_brief"] = create_fallback_insight(insights)
-            st.session_state["is_fallback"] = True
-
-
-brief = st.session_state.get("ai_brief")
-
-if brief:
-    if st.session_state.get("is_fallback"):
-        st.warning(
-            "⚠️ Ollama model was unavailable or output contained numeric figures. Displaying qualitative Python fallback brief."
-        )
+    fallback_brief = create_fallback_insight(insights)
 
     st.markdown("### Key Finding")
-    st.write(brief.get("key_finding", ""))
+    st.write(fallback_brief.get("key_finding", ""))
 
     st.markdown("### Why It Matters")
-    st.write(brief.get("why_it_matters", ""))
+    st.write(fallback_brief.get("why_it_matters", ""))
 
     st.markdown("### Priority Actions")
-    actions = brief.get("priority_actions", [])
+    actions = fallback_brief.get("priority_actions", [])
     if isinstance(actions, list):
         for act in actions:
             st.markdown(f"- {act}")
@@ -322,16 +315,69 @@ if brief:
         st.write(actions)
 
     st.markdown("### Business Impact")
-    st.write(brief.get("business_impact", ""))
+    st.write(fallback_brief.get("business_impact", ""))
 
     st.markdown("### Savings Opportunity")
-    savings_opp = brief.get("savings_opportunity", "")
-    if isinstance(savings_opp, dict):
-        sav_items = [f"**{k.replace('_', ' ').title()}**: {v}" for k, v in savings_opp.items()]
-        st.success(" • ".join(sav_items))
-    else:
-        st.success(str(savings_opp))
+    st.success(fallback_brief.get("savings_opportunity", ""))
 
+else:
+    st.markdown(
+        "Generate an executive summary interpreting verified analytical findings using local AI (Ollama - Llama 3.2 3B)."
+    )
+
+    if "ai_brief" not in st.session_state:
+        st.session_state["ai_brief"] = None
+        st.session_state["is_fallback"] = False
+
+    if st.button("Generate AI Executive Brief", type="primary"):
+        with st.spinner("🤖 Connecting to local AI (Ollama - Llama 3.2 3B)..."):
+            try:
+                raw_ai_output = generate_ai_insight(insights)
+                brief, errors = validate_ai_output(raw_ai_output, insights)
+
+                if errors or not brief:
+                    st.session_state["ai_brief"] = create_fallback_insight(insights)
+                    st.session_state["is_fallback"] = True
+                else:
+                    st.session_state["ai_brief"] = brief
+                    st.session_state["is_fallback"] = False
+
+            except Exception as e:
+                st.session_state["ai_brief"] = create_fallback_insight(insights)
+                st.session_state["is_fallback"] = True
+
+    brief = st.session_state.get("ai_brief")
+
+    if brief:
+        if st.session_state.get("is_fallback"):
+            st.warning(
+                "⚠️ Ollama model output failed validation or encountered an error. Displaying verified qualitative Python fallback brief."
+            )
+
+        st.markdown("### Key Finding")
+        st.write(brief.get("key_finding", ""))
+
+        st.markdown("### Why It Matters")
+        st.write(brief.get("why_it_matters", ""))
+
+        st.markdown("### Priority Actions")
+        actions = brief.get("priority_actions", [])
+        if isinstance(actions, list):
+            for act in actions:
+                st.markdown(f"- {act}")
+        else:
+            st.write(actions)
+
+        st.markdown("### Business Impact")
+        st.write(brief.get("business_impact", ""))
+
+        st.markdown("### Savings Opportunity")
+        savings_opp = brief.get("savings_opportunity", "")
+        if isinstance(savings_opp, dict):
+            sav_items = [f"**{k.replace('_', ' ').title()}**: {v}" for k, v in savings_opp.items()]
+            st.success(" • ".join(sav_items))
+        else:
+            st.success(str(savings_opp))
 
 
 # ============================================================
@@ -344,4 +390,5 @@ st.caption(
     "Blinkit Dark Store Operations Intelligence • "
     "Python + Pandas + Power BI + Ollama"
 )
+
 
