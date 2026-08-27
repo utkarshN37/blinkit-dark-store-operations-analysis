@@ -2,6 +2,11 @@ import pandas as pd
 import streamlit as st
 
 from insight_detection import detect_insights
+from ai_insights import (
+    generate_ai_insight,
+    validate_ai_output,
+    create_fallback_insight
+)
 
 
 # ============================================================
@@ -16,7 +21,7 @@ st.set_page_config(
 
 
 # ============================================================
-# LOAD DATA
+# LOAD DATA & RUN ANALYTICS
 # ============================================================
 
 @st.cache_data
@@ -26,10 +31,6 @@ def load_data():
 
     return pd.read_csv(file_path)
 
-
-# ============================================================
-# RUN ANALYTICS
-# ============================================================
 
 df_damage = load_data()
 
@@ -60,14 +61,14 @@ st.divider()
 
 overall = insights["overall"]
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 
 with col1:
 
     st.metric(
         label="Total Loss",
-        value=f"₹{overall['total_loss']:,.1f}"
+        value=f"₹{overall['total_loss']:,.2f}"
     )
 
 
@@ -92,6 +93,14 @@ with col4:
     st.metric(
         label="Stores Affected",
         value=f"{overall['stores_affected']:,}"
+    )
+
+
+with col5:
+
+    st.metric(
+        label="Annual Loss Projection",
+        value=f"₹{overall['annual_loss_projection']:,.2f}"
     )
 
 
@@ -137,76 +146,192 @@ else:
 
 
 # ============================================================
-# KEY BUSINESS METRICS
+# VERIFIED BUSINESS METRICS
 # ============================================================
 
 st.divider()
 
-st.subheader("📌 Key Business Findings")
+st.subheader("📌 Verified Business Metrics")
 
 
 store = insights["highest_loss_store"]
 reason = insights["top_loss_reason"]
 category = insights["top_category"]
 pareto = insights["pareto"]
+consolidated_savings = insights["savings_opportunity"]["consolidated"]
 
 
-metric_col1, metric_col2, metric_col3 = st.columns(3)
+v_col1, v_col2, v_col3, v_col4, v_col5 = st.columns(5)
 
 
-with metric_col1:
+with v_col1:
+
+    st.metric(
+        label="Total Loss",
+        value=f"₹{overall['total_loss']:,.2f}"
+    )
+
+
+with v_col2:
 
     st.metric(
         label="Highest-Loss Store",
         value=store["store_id"],
-        delta=f"₹{store['loss']:,.0f}"
-    )
-
-    st.caption(
-        f"{store['loss_pct']:.2f}% of total loss"
+        delta=f"₹{store['loss']:,.2f} ({store['loss_pct']:.1f}%)"
     )
 
 
-with metric_col2:
+with v_col3:
 
     st.metric(
         label="Top Loss Driver",
         value=reason["reason"],
-        delta=f"₹{reason['loss']:,.0f}"
-    )
-
-    st.caption(
-        f"{reason['loss_pct']:.2f}% of total loss"
+        delta=f"₹{reason['loss']:,.2f} ({reason['loss_pct']:.1f}%)"
     )
 
 
-with metric_col3:
+with v_col4:
 
     st.metric(
-        label="Top Product Category",
-        value=category["category"],
-        delta=f"₹{category['loss']:,.0f}"
+        label="Monthly Savings",
+        value=f"₹{consolidated_savings['monthly_savings']:,.2f}"
+    )
+
+
+with v_col5:
+
+    st.metric(
+        label="Annual Savings",
+        value=f"₹{consolidated_savings['annual_savings']:,.2f}"
     )
 
 
 st.info(
-    f"**Pareto finding:** The top {pareto['number_of_causes']} "
-    f"damage reasons account for {pareto['loss_percentage']:.2f}% "
-    f"of total losses."
+    f"**Pareto Finding:** The top {pareto['number_of_causes']} damage reasons "
+    f"account for {pareto['loss_percentage']:.2f}% of total losses. "
+    f"Top Product Category: **{category['category']}** (₹{category['loss']:,.2f})."
 )
 
 
 # ============================================================
-# AI EXECUTIVE BRIEF
+# SAVINGS & ROI OPPORTUNITY (VERIFIED PYTHON METRICS)
+# ============================================================
+
+st.divider()
+
+st.subheader("💰 Savings & ROI Opportunity")
+
+
+s_col1, s_col2, s_col3, s_col4, s_col5 = st.columns(5)
+
+
+with s_col1:
+
+    st.metric(
+        label="Monthly Savings",
+        value=f"₹{consolidated_savings['monthly_savings']:,.2f}"
+    )
+
+
+with s_col2:
+
+    st.metric(
+        label="Annual Savings",
+        value=f"₹{consolidated_savings['annual_savings']:,.2f}"
+    )
+
+
+with s_col3:
+
+    st.metric(
+        label="Estimated Loss Reduction",
+        value=f"{consolidated_savings['estimated_loss_reduction_pct']}%"
+    )
+
+
+with s_col4:
+
+    st.metric(
+        label="Implementation Timeline",
+        value=str(consolidated_savings["implementation_timeline"])
+    )
+
+
+with s_col5:
+
+    st.metric(
+        label="Confidence",
+        value=str(consolidated_savings["confidence"])
+    )
+
+
+# ============================================================
+# AI EXECUTIVE BRIEF (NARRATIVE ONLY)
 # ============================================================
 
 st.divider()
 
 st.subheader("🤖 AI Executive Brief")
 
-st.info(
-    "AI insight generation will be connected here next."
+st.markdown(
+    "Generate an executive summary interpreting verified analytical findings using local AI (Ollama - Llama 3.2 3B)."
 )
+
+if "ai_brief" not in st.session_state:
+    st.session_state["ai_brief"] = None
+    st.session_state["is_fallback"] = False
+
+if st.button("Generate AI Executive Brief", type="primary"):
+    with st.spinner("🤖 Connecting to local AI (Ollama - Llama 3.2 3B)..."):
+        try:
+            raw_ai_output = generate_ai_insight(insights)
+            brief, errors = validate_ai_output(raw_ai_output, insights)
+
+            if errors or not brief:
+                st.session_state["ai_brief"] = create_fallback_insight(insights)
+                st.session_state["is_fallback"] = True
+            else:
+                st.session_state["ai_brief"] = brief
+                st.session_state["is_fallback"] = False
+
+        except Exception as e:
+            st.session_state["ai_brief"] = create_fallback_insight(insights)
+            st.session_state["is_fallback"] = True
+
+
+brief = st.session_state.get("ai_brief")
+
+if brief:
+    if st.session_state.get("is_fallback"):
+        st.warning(
+            "⚠️ Ollama model was unavailable or output contained numeric figures. Displaying qualitative Python fallback brief."
+        )
+
+    st.markdown("### Key Finding")
+    st.write(brief.get("key_finding", ""))
+
+    st.markdown("### Why It Matters")
+    st.write(brief.get("why_it_matters", ""))
+
+    st.markdown("### Priority Actions")
+    actions = brief.get("priority_actions", [])
+    if isinstance(actions, list):
+        for act in actions:
+            st.markdown(f"- {act}")
+    else:
+        st.write(actions)
+
+    st.markdown("### Business Impact")
+    st.write(brief.get("business_impact", ""))
+
+    st.markdown("### Savings Opportunity")
+    savings_opp = brief.get("savings_opportunity", "")
+    if isinstance(savings_opp, dict):
+        sav_items = [f"**{k.replace('_', ' ').title()}**: {v}" for k, v in savings_opp.items()]
+        st.success(" • ".join(sav_items))
+    else:
+        st.success(str(savings_opp))
+
 
 
 # ============================================================
@@ -219,3 +344,4 @@ st.caption(
     "Blinkit Dark Store Operations Intelligence • "
     "Python + Pandas + Power BI + Ollama"
 )
+
