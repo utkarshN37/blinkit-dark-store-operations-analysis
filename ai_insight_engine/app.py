@@ -1,12 +1,15 @@
+import os
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
 
 from insight_detection import detect_insights
 from ai_insights import (
+    check_ollama_available,
     generate_ai_insight,
     validate_ai_output,
     create_fallback_insight,
-    check_ollama_available
 )
 
 
@@ -17,33 +20,66 @@ from ai_insights import (
 st.set_page_config(
     page_title="Blinkit Operations Intelligence",
     page_icon="📊",
-    layout="wide"
+    layout="wide",
 )
 
 
-
 # ============================================================
-# LOAD DATA & RUN ANALYTICS
+# LOAD DATA
 # ============================================================
 
 @st.cache_data
-def load_data():
+def load_data() -> pd.DataFrame:
+    """
+    Load the Blinkit damaged-products dataset using a path
+    that works locally and on Streamlit Cloud.
+    """
 
-    file_path = "../data/raw/damaged_products.csv"
+    project_root = Path(__file__).resolve().parent.parent
+
+    file_path = (
+        project_root
+        / "data"
+        / "raw"
+        / "damaged_products.csv"
+    )
+
+    if not file_path.exists():
+        raise FileNotFoundError(
+            f"Dataset not found at: {file_path}"
+        )
 
     return pd.read_csv(file_path)
 
 
-df_damage = load_data()
+# ============================================================
+# LOAD + ANALYZE
+# ============================================================
 
-insights = detect_insights(df_damage)
+try:
+
+    df_damage = load_data()
+
+    insights = detect_insights(
+        df_damage
+    )
+
+except Exception as e:
+
+    st.error(
+        f"Unable to load or analyze the Blinkit dataset: {e}"
+    )
+
+    st.stop()
 
 
 # ============================================================
 # HEADER
 # ============================================================
 
-st.title("📊 Blinkit Operations Intelligence")
+st.title(
+    "📊 Blinkit Operations Intelligence"
+)
 
 st.markdown(
     """
@@ -58,7 +94,7 @@ st.divider()
 
 
 # ============================================================
-# KPI SECTION
+# VERIFIED KPI SECTION
 # ============================================================
 
 overall = insights["overall"]
@@ -70,7 +106,7 @@ with col1:
 
     st.metric(
         label="Total Loss",
-        value=f"₹{overall['total_loss']:,.2f}"
+        value=f"₹{overall['total_loss']:,.2f}",
     )
 
 
@@ -78,7 +114,7 @@ with col2:
 
     st.metric(
         label="Incidents",
-        value=f"{overall['total_incidents']:,}"
+        value=f"{overall['total_incidents']:,}",
     )
 
 
@@ -86,7 +122,7 @@ with col3:
 
     st.metric(
         label="Damaged Units",
-        value=f"{overall['total_damaged_units']:,}"
+        value=f"{overall['total_damaged_units']:,}",
     )
 
 
@@ -94,7 +130,7 @@ with col4:
 
     st.metric(
         label="Stores Affected",
-        value=f"{overall['stores_affected']:,}"
+        value=f"{overall['stores_affected']:,}",
     )
 
 
@@ -102,7 +138,7 @@ with col5:
 
     st.metric(
         label="Annual Loss Projection",
-        value=f"₹{overall['annual_loss_projection']:,.2f}"
+        value=f"₹{overall['annual_loss_projection']:,.2f}",
     )
 
 
@@ -114,30 +150,42 @@ st.divider()
 
 st.subheader("🔎 Automated Insights")
 
-
-flags = insights["automatic_flags"]
+flags = insights.get(
+    "automatic_flags",
+    []
+)
 
 
 if flags:
 
     for flag in flags:
 
-        if flag["priority"] == "high":
+        priority = flag.get(
+            "priority",
+            "medium"
+        ).lower()
+
+        message = flag.get(
+            "message",
+            ""
+        )
+
+        if priority == "high":
 
             st.error(
-                f"🔴 {flag['message']}"
+                f"🔴 {message}"
             )
 
-        elif flag["priority"] == "medium":
+        elif priority == "medium":
 
             st.warning(
-                f"🟡 {flag['message']}"
+                f"🟡 {message}"
             )
 
         else:
 
             st.info(
-                f"🟢 {flag['message']}"
+                f"🟢 {message}"
             )
 
 else:
@@ -153,117 +201,141 @@ else:
 
 st.divider()
 
-st.subheader("📌 Verified Business Metrics")
+st.subheader(
+    "📌 Verified Business Metrics"
+)
+
+store = insights[
+    "highest_loss_store"
+]
+
+reason = insights[
+    "top_loss_reason"
+]
+
+category = insights[
+    "top_category"
+]
+
+pareto = insights[
+    "pareto"
+]
+
+location = insights[
+    "location_concentration"
+]
 
 
-store = insights["highest_loss_store"]
-reason = insights["top_loss_reason"]
-category = insights["top_category"]
-pareto = insights["pareto"]
-consolidated_savings = insights["savings_opportunity"]["consolidated"]
+metric_col1, metric_col2, metric_col3 = st.columns(3)
 
 
-v_col1, v_col2, v_col3, v_col4, v_col5 = st.columns(5)
-
-
-with v_col1:
-
-    st.metric(
-        label="Total Loss",
-        value=f"₹{overall['total_loss']:,.2f}"
-    )
-
-
-with v_col2:
+with metric_col1:
 
     st.metric(
         label="Highest-Loss Store",
         value=store["store_id"],
-        delta=f"₹{store['loss']:,.2f} ({store['loss_pct']:.1f}%)"
+    )
+
+    st.caption(
+        f"₹{store['loss']:,.2f} "
+        f"({store['loss_pct']:.2f}% of total loss)"
     )
 
 
-with v_col3:
+with metric_col2:
 
     st.metric(
         label="Top Loss Driver",
         value=reason["reason"],
-        delta=f"₹{reason['loss']:,.2f} ({reason['loss_pct']:.1f}%)"
+    )
+
+    st.caption(
+        f"₹{reason['loss']:,.2f} "
+        f"({reason['loss_pct']:.2f}% of total loss)"
     )
 
 
-with v_col4:
+with metric_col3:
 
     st.metric(
-        label="Monthly Savings",
-        value=f"₹{consolidated_savings['monthly_savings']:,.2f}"
+        label="Top Product Category",
+        value=category["category"],
     )
 
-
-with v_col5:
-
-    st.metric(
-        label="Annual Savings",
-        value=f"₹{consolidated_savings['annual_savings']:,.2f}"
+    st.caption(
+        f"₹{category['loss']:,.2f} in losses"
     )
 
 
 st.info(
-    f"**Pareto Finding:** The top {pareto['number_of_causes']} damage reasons "
-    f"account for {pareto['loss_percentage']:.2f}% of total losses. "
-    f"Top Product Category: **{category['category']}** (₹{category['loss']:,.2f})."
+    f"**Pareto Finding:** The top "
+    f"{pareto['number_of_causes']} damage reasons account for "
+    f"{pareto['loss_percentage']:.2f}% of total losses."
 )
 
 
 # ============================================================
-# SAVINGS & ROI OPPORTUNITY (VERIFIED PYTHON METRICS)
+# SAVINGS & ROI
 # ============================================================
 
 st.divider()
 
-st.subheader("💰 Savings & ROI Opportunity")
+st.subheader(
+    "💰 Savings & ROI Opportunity"
+)
+
+savings = insights[
+    "savings_opportunity"
+]["consolidated"]
 
 
-s_col1, s_col2, s_col3, s_col4, s_col5 = st.columns(5)
+roi_col1, roi_col2, roi_col3 = st.columns(3)
 
 
-with s_col1:
+with roi_col1:
 
     st.metric(
         label="Monthly Savings",
-        value=f"₹{consolidated_savings['monthly_savings']:,.2f}"
+        value=f"₹{savings['monthly_savings']:,.2f}",
     )
 
 
-with s_col2:
+with roi_col2:
 
     st.metric(
         label="Annual Savings",
-        value=f"₹{consolidated_savings['annual_savings']:,.2f}"
+        value=f"₹{savings['annual_savings']:,.2f}",
     )
 
 
-with s_col3:
+with roi_col3:
 
     st.metric(
         label="Estimated Loss Reduction",
-        value=f"{consolidated_savings['estimated_loss_reduction_pct']}%"
+        value=f"{savings['estimated_loss_reduction_pct']:.1f}%",
     )
 
 
-with s_col4:
+roi_col4, roi_col5 = st.columns(2)
+
+
+with roi_col4:
 
     st.metric(
         label="Implementation Timeline",
-        value=str(consolidated_savings["implementation_timeline"])
+        value=savings[
+            "implementation_timeline"
+        ],
     )
 
 
-with s_col5:
+with roi_col5:
 
     st.metric(
         label="Confidence",
-        value=str(consolidated_savings["confidence"])
+        value=savings[
+            "confidence"
+        ],
     )
 
 
@@ -273,97 +345,235 @@ with s_col5:
 
 st.divider()
 
-st.subheader("🤖 AI Executive Brief")
+st.subheader(
+    "🤖 AI Executive Brief"
+)
 
-ollama_online = check_ollama_available()
+st.markdown(
+    """
+    Generate an executive summary interpreting verified analytical
+    findings using local AI (Ollama - Llama 3.2 3B).
+    """
+)
 
 
-if not ollama_online:
-    st.info(
-        "💡 **AI Executive Brief is available in the local desktop version because Ollama runs locally.** "
-        "Displaying verified deterministic Python analytical insights below for cloud deployment."
-    )
+# ------------------------------------------------------------
+# Detect local Ollama
+# ------------------------------------------------------------
 
-    fallback_brief = create_fallback_insight(insights)
+ollama_available = check_ollama_available()
 
-    st.markdown("### Key Finding")
-    st.write(fallback_brief.get("key_finding", ""))
 
-    st.markdown("### Why It Matters")
-    st.write(fallback_brief.get("why_it_matters", ""))
+if ollama_available:
 
-    st.markdown("### Priority Actions")
-    actions = fallback_brief.get("priority_actions", [])
-    if isinstance(actions, list):
-        for act in actions:
-            st.markdown(f"- {act}")
-    else:
-        st.write(actions)
+    if st.button(
+        "Generate AI Executive Brief",
+        type="primary"
+    ):
 
-    st.markdown("### Business Impact")
-    st.write(fallback_brief.get("business_impact", ""))
+        with st.spinner(
+            "Generating business insight with Ollama..."
+        ):
 
-    st.markdown("### Savings Opportunity")
-    st.success(fallback_brief.get("savings_opportunity", ""))
-
-else:
-    st.markdown(
-        "Generate an executive summary interpreting verified analytical findings using local AI (Ollama - Llama 3.2 3B)."
-    )
-
-    if "ai_brief" not in st.session_state:
-        st.session_state["ai_brief"] = None
-        st.session_state["is_fallback"] = False
-
-    if st.button("Generate AI Executive Brief", type="primary"):
-        with st.spinner("🤖 Connecting to local AI (Ollama - Llama 3.2 3B)..."):
             try:
-                raw_ai_output = generate_ai_insight(insights)
-                brief, errors = validate_ai_output(raw_ai_output, insights)
 
-                if errors or not brief:
-                    st.session_state["ai_brief"] = create_fallback_insight(insights)
-                    st.session_state["is_fallback"] = True
-                else:
-                    st.session_state["ai_brief"] = brief
-                    st.session_state["is_fallback"] = False
+                ai_output = generate_ai_insight(
+                    insights
+                )
+
+                validated_output, validation_errors = (
+                    validate_ai_output(
+                        ai_output,
+                        insights
+                    )
+                )
+
+                # ------------------------------------------------
+                # Use fallback if AI output is unreliable
+                # ------------------------------------------------
+
+                if validation_errors:
+
+                    validated_output = (
+                        create_fallback_insight(
+                            insights
+                        )
+                    )
+
+                    st.warning(
+                        "AI response required validation fallback. "
+                        "Verified Python analytics are being shown."
+                    )
+
+                # ------------------------------------------------
+                # Key Finding
+                # ------------------------------------------------
+
+                st.markdown(
+                    "### 📌 Key Finding"
+                )
+
+                st.write(
+                    validated_output[
+                        "key_finding"
+                    ]
+                )
+
+                # ------------------------------------------------
+                # Why It Matters
+                # ------------------------------------------------
+
+                st.markdown(
+                    "### 🎯 Why It Matters"
+                )
+
+                st.write(
+                    validated_output[
+                        "why_it_matters"
+                    ]
+                )
+
+                # ------------------------------------------------
+                # Priority Actions
+                # ------------------------------------------------
+
+                st.markdown(
+                    "### 📋 Priority Actions"
+                )
+
+                for action in validated_output[
+                    "priority_actions"
+                ]:
+
+                    st.markdown(
+                        f"- {action}"
+                    )
+
+                # ------------------------------------------------
+                # Business Impact
+                # ------------------------------------------------
+
+                st.markdown(
+                    "### ⚡ Business Impact"
+                )
+
+                st.write(
+                    validated_output[
+                        "business_impact"
+                    ]
+                )
+
+                # ------------------------------------------------
+                # Savings Opportunity
+                # ------------------------------------------------
+
+                st.markdown(
+                    "### 💰 Savings Opportunity"
+                )
+
+                st.success(
+                    validated_output[
+                        "savings_opportunity"
+                    ]
+                )
 
             except Exception as e:
-                st.session_state["ai_brief"] = create_fallback_insight(insights)
-                st.session_state["is_fallback"] = True
 
-    brief = st.session_state.get("ai_brief")
+                st.error(
+                    f"AI generation failed: {e}"
+                )
 
-    if brief:
-        if st.session_state.get("is_fallback"):
-            st.warning(
-                "⚠️ Ollama model output failed validation or encountered an error. Displaying verified qualitative Python fallback brief."
-            )
+else:
 
-        st.markdown("### Key Finding")
-        st.write(brief.get("key_finding", ""))
+    # ------------------------------------------------------------
+    # CLOUD / NO OLLAMA MODE
+    # ------------------------------------------------------------
 
-        st.markdown("### Why It Matters")
-        st.write(brief.get("why_it_matters", ""))
+    st.info(
+        """
+        💡 **AI Executive Brief is available in the local desktop
+        version because Ollama runs locally.**
 
-        st.markdown("### Priority Actions")
-        actions = brief.get("priority_actions", [])
-        if isinstance(actions, list):
-            for act in actions:
-                st.markdown(f"- {act}")
-        else:
-            st.write(actions)
+        The verified Python analytical findings below remain available
+        in this deployment.
+        """
+    )
 
-        st.markdown("### Business Impact")
-        st.write(brief.get("business_impact", ""))
+    fallback = create_fallback_insight(
+        insights
+    )
 
-        st.markdown("### Savings Opportunity")
-        savings_opp = brief.get("savings_opportunity", "")
-        if isinstance(savings_opp, dict):
-            sav_items = [f"**{k.replace('_', ' ').title()}**: {v}" for k, v in savings_opp.items()]
-            st.success(" • ".join(sav_items))
-        else:
-            st.success(str(savings_opp))
+    # ------------------------------------------------------------
+    # Key Finding
+    # ------------------------------------------------------------
+
+    st.markdown(
+        "### 📌 Key Finding"
+    )
+
+    st.write(
+        fallback[
+            "key_finding"
+        ]
+    )
+
+    # ------------------------------------------------------------
+    # Why It Matters
+    # ------------------------------------------------------------
+
+    st.markdown(
+        "### 🎯 Why It Matters"
+    )
+
+    st.write(
+        fallback[
+            "why_it_matters"
+        ]
+    )
+
+    # ------------------------------------------------------------
+    # Priority Actions
+    # ------------------------------------------------------------
+
+    st.markdown(
+        "### 📋 Priority Actions"
+    )
+
+    for action in fallback[
+        "priority_actions"
+    ]:
+
+        st.markdown(
+            f"- {action}"
+        )
+
+    # ------------------------------------------------------------
+    # Business Impact
+    # ------------------------------------------------------------
+
+    st.markdown(
+        "### ⚡ Business Impact"
+    )
+
+    st.write(
+        fallback[
+            "business_impact"
+        ]
+    )
+
+    # ------------------------------------------------------------
+    # Savings Opportunity
+    # ------------------------------------------------------------
+
+    st.markdown(
+        "### 💰 Savings Opportunity"
+    )
+
+    st.success(
+        fallback[
+            "savings_opportunity"
+        ]
+    )
 
 
 # ============================================================
@@ -376,5 +586,3 @@ st.caption(
     "Blinkit Dark Store Operations Intelligence • "
     "Python + Pandas + Power BI + Ollama"
 )
-
-
