@@ -5,7 +5,8 @@ from insight_detection import detect_insights
 from ai_insights import (
     generate_ai_insight,
     validate_ai_output,
-    create_fallback_insight
+    create_fallback_insight,
+    check_ollama_available
 )
 
 
@@ -18,6 +19,7 @@ st.set_page_config(
     page_icon="📊",
     layout="wide"
 )
+
 
 
 # ============================================================
@@ -266,23 +268,6 @@ with s_col5:
 
 
 # ============================================================
-# OLLAMA AVAILABILITY CHECK
-# ============================================================
-
-@st.cache_data(ttl=60)
-def check_ollama_available() -> bool:
-    """
-    Check whether local Ollama service is reachable.
-    """
-    try:
-        import ollama
-        ollama.list()
-        return True
-    except Exception:
-        return False
-
-
-# ============================================================
 # AI EXECUTIVE BRIEF
 # ============================================================
 
@@ -291,6 +276,7 @@ st.divider()
 st.subheader("🤖 AI Executive Brief")
 
 ollama_online = check_ollama_available()
+
 
 if not ollama_online:
     st.info(
